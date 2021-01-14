@@ -23,11 +23,7 @@ function HomePage() {
 
   return (
     <S.MainContainer>
-      <div style={{ marginBottom: 20 }}>
-        <button onClick={prevSlide}>Prev</button>
-        <button onClick={nextSlide}>Next</button>
-      </div>
-      <Slider charts={data} current={current} setCurrent={setCurrent} />
+      <Slider prevSlide={prevSlide} nextSlide={nextSlide} charts={data} current={current} setCurrent={setCurrent} />
     </S.MainContainer>
   );
 }
