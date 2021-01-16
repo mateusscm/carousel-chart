@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Brush
 } from 'recharts';
 
 // import { Container } from './styles';
 
-function ChartLine({chartInfo}) {
+function ChartLine({chartInfo, defaultColor}) {
   return (
     <ResponsiveContainer>
 
@@ -20,9 +20,10 @@ function ChartLine({chartInfo}) {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" height={36}/>
-          <Line type="monotone" dataKey="company_A" stroke="#8884d8" />
-          <Line type="monotone" dataKey="company_B" stroke="#255255" />
-          <Line type="monotone" dataKey="company_C" stroke="#82ca9d" />
+          <Brush dataKey='name' height={10} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
+          <Line type="monotone" dataKey="company_A" stroke={defaultColor?.color1} />
+          <Line type="monotone" dataKey="company_B" stroke={defaultColor?.color2} />
+          <Line type="monotone" dataKey="company_C" stroke={defaultColor?.color3} />
         </LineChart>
     </ResponsiveContainer>
   );

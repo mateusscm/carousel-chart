@@ -4,7 +4,7 @@ import Card from "../Card";
 import * as S from "./style";
 import chartData from '../../data.json';
 
-function Slider({ charts, current, setCurrent, prevSlide, nextSlide }) {
+function Slider({ charts, current, setCurrent, prevSlide, nextSlide, defaultColor }) {
   return (
     <S.SliderSection>
         <button className="left" onClick={prevSlide}>
@@ -19,7 +19,7 @@ function Slider({ charts, current, setCurrent, prevSlide, nextSlide }) {
             key={info?.id}
             className={index === current ? "slide active" : "slide"}
           >
-            {index === current && <Card data={info} chartData={chartData} />}
+            {index === current && <Card data={info} chartData={chartData} defaultColor={defaultColor} />}
           </div>
         );
       })}

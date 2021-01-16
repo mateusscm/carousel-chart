@@ -1,10 +1,9 @@
 import React from 'react';
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush
   } from 'recharts';
-// import { Container } from './styles';
 
-function ChartBar({chartInfo}) {
+function ChartBar({chartInfo, defaultColor}) {
   return (
     <ResponsiveContainer>
         <BarChart
@@ -18,9 +17,10 @@ function ChartBar({chartInfo}) {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" height={36}/>
-          <Bar dataKey="company_A" stackId="a" fill="#8884d8" />
-          <Bar dataKey="company_B" stackId="a" fill="#81d255" />
-          <Bar dataKey="company_C" stackId="a" fill="#82ca9d" />
+          <Brush dataKey='name' height={10} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
+          <Bar dataKey="company_A" stackId="a" fill={defaultColor?.color1} />
+          <Bar dataKey="company_B" stackId="a" fill={defaultColor?.color2} />
+          <Bar dataKey="company_C" stackId="a" fill={defaultColor?.color3} />
         </BarChart>
       </ResponsiveContainer>
     );

@@ -5,12 +5,9 @@ import {
 
 // import { Container } from './styles';
 
-const renderActiveShape = (props) => {
+const renderActiveShape = ({cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
+	fill, payload, percent, value,}) => {
 	const RADIAN = Math.PI / 180;
-	const {
-		cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
-		fill, payload, percent, value,
-	} = props;
 	const sin = Math.sin(-RADIAN * midAngle);
 	const cos = Math.cos(-RADIAN * midAngle);
 	const sx = cx + (outerRadius + 10) * cos;

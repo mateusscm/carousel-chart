@@ -2,14 +2,14 @@ import React from "react";
 import { ChartBar, ChartLine, ChartPie } from "../Charts";
 import * as S from "./style";
 
-function Card({ data, chartData }) {
+function Card({ data, chartData, defaultColor }) {
   const handleTypeChart = (type) => {
     if (type === 'bar') {
-      return <ChartBar chartInfo={chartData.slice(1, 50)} />
+      return <ChartBar chartInfo={chartData} defaultColor={defaultColor} />
     } else if (type === 'column') {
-      return <ChartLine chartInfo={chartData.slice(1, 50)} />
+      return <ChartLine chartInfo={chartData} defaultColor={defaultColor} />
     } else {
-      return <ChartPie chartInfo={chartData.slice(1, 50)} />
+      return <ChartPie chartInfo={chartData} defaultColor={defaultColor} />
     }
   }
 
