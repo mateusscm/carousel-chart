@@ -14,76 +14,74 @@ export const ContainerSelectColor = styled.div`
   width: 100%;
   padding-right: 45px;
 
+  @media screen and (max-width: 600px) {
+    padding-right: 0px;
+  }
+
   & > div {
     display: flex;
     position: relative;
     width: 7rem;
     margin-left: 10px;
     cursor: pointer;
-    
+
     & span {
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
       box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
-
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
     }
 
-
-    
     .azul {
-      background-color: #003C96;
+      background-color: #003c96;
       z-index: 1;
     }
     .roxo1 {
-      background-color: #59254E;
+      background-color: #59254e;
       position: absolute;
       left: 30px;
       z-index: 2;
     }
     .vermelho {
-      background-color: #B40E07;
+      background-color: #b40e07;
       position: absolute;
       left: 60px;
       z-index: 3;
     }
 
     .verde {
-      background-color: #08934B;
+      background-color: #08934b;
       z-index: 1;
     }
     .musgo {
-      background-color: #6D7A2A;
+      background-color: #6d7a2a;
       position: absolute;
       left: 30px;
       z-index: 2;
     }
     .laranja {
-      background-color: #CC620A;
+      background-color: #cc620a;
       position: absolute;
       left: 60px;
       z-index: 3;
     }
 
     .amarelo {
-      background-color: #E2BD03;
+      background-color: #e2bd03;
       z-index: 1;
     }
     .rosa {
-      background-color: #B26768;
+      background-color: #b26768;
       position: absolute;
       left: 30px;
       z-index: 2;
     }
     .roxo {
-      background-color: #8312CC;
+      background-color: #8312cc;
       position: absolute;
       left: 60px;
       z-index: 3;
     }
-
-
-    
   }
 `;

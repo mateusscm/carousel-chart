@@ -25,6 +25,10 @@ export const SliderSection = styled.section`
     margin-top: 20px;
   }
 
+  @media screen and (max-width: 600px) {
+    padding: 0px;
+  }
+
   button {
     border: none;
     display: flex;
@@ -40,13 +44,13 @@ export const SliderSection = styled.section`
     &:hover {
       background-color: darkblue;
       box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
     }
 
     &:active {
       background-color: darkblue;
       box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
     }
 
     & svg > path {
@@ -58,11 +62,15 @@ export const SliderSection = styled.section`
     position: absolute;
     right: -13px;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
 
     & > svg {
       padding-left: 3px;
+    }
+
+    @media screen and (max-width: 600px) {
+      top: 98%;
     }
   }
 
@@ -70,11 +78,15 @@ export const SliderSection = styled.section`
     position: absolute;
     left: 16px;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
 
     & > svg {
       padding-right: 3px;
+    }
+
+    @media screen and (max-width: 600px) {
+      top: 98%;
     }
   }
 `;
@@ -87,7 +99,7 @@ export const Dots = styled.span`
   transition: transform 0.2s ease-in;
   background-color: #666;
   cursor: pointer;
-  
+
   ${({ current }) =>
     current &&
     css`
