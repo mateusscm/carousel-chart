@@ -2,9 +2,11 @@
 
 # Carousel Chart
 
+[DEMO](https://mateusscm.github.io/carousel-chart/)
+
 ## Installing and Running the APP 
 
 Go to your project directory, and run:
 ### `yarn install` and when it´s done, run `yarn start`
 
-[DEMO](https://mateusscm.github.io/carousel-chart/)
+
