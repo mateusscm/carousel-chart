@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { ChartBar, ChartLine, ChartPie } from "../Charts";
 import * as S from "./style";
 
@@ -21,6 +23,15 @@ function Card({ data, chartData, defaultColor }) {
       {handleTypeChart(data?.type)}
     </S.CardContainer>
   );
+}
+
+Card.propTypes = {
+  chartData: PropTypes.array.isRequired,
+  data: PropTypes.shape({
+    text: PropTypes.string,
+    type: PropTypes.string
+  }).isRequired,
+  defaultColor: PropTypes.objectOf(PropTypes.string).isRequired,
 }
 
 export default Card;

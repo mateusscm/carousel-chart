@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { LeftArrow, RightArrow } from "../../assets/icons";
 import Card from "../Card";
@@ -25,8 +26,6 @@ function Slider({ charts, current, setCurrent, prevSlide, nextSlide, defaultColo
       })}
       <div className="container-dots">
         {charts.map((idx) => {
-          // console.log("idx", idx);
-          // console.log("current", current);
           return (
             <S.Dots
               key={idx?.id}
@@ -38,6 +37,15 @@ function Slider({ charts, current, setCurrent, prevSlide, nextSlide, defaultColo
       </div>
     </S.SliderSection>
   );
+}
+
+Slider.propTypes = {
+  charts: PropTypes.array.isRequired,
+  current: PropTypes.number.isRequired,
+  defaultColor: PropTypes.objectOf(PropTypes.string).isRequired,
+  nextSlide: PropTypes.func.isRequired,
+  prevSlide: PropTypes.func.isRequired,
+  setCurrent: PropTypes.func.isRequired,
 }
 
 export default Slider;

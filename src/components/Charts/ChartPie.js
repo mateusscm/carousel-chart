@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from 'react';
 import {
   ResponsiveContainer, PieChart, Pie, Sector, Cell,
@@ -95,6 +96,11 @@ function ChartPie({chartInfo , defaultColor}) {
         </PieChart>
     </ResponsiveContainer>
   );
+}
+
+ChartPie.propTypes = {
+  chartInfo: PropTypes.array.isRequired,
+  defaultColor: PropTypes.objectOf(PropTypes.string).isRequired,
 }
 
 export default ChartPie;

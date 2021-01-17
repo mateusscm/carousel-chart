@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush
@@ -24,6 +25,15 @@ function ChartBar({chartInfo, defaultColor}) {
         </BarChart>
       </ResponsiveContainer>
     );
+}
+
+ChartBar.propTypes = {
+  chartInfo: PropTypes.array.isRequired,
+  defaultColor: PropTypes.shape({
+    color1: PropTypes.string,
+    color2: PropTypes.string,
+    color3: PropTypes.string,
+  }).isRequired,
 }
 
 export default ChartBar;

@@ -1,9 +1,8 @@
+import PropTypes from "prop-types";
 import React from 'react';
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Brush
 } from 'recharts';
-
-// import { Container } from './styles';
 
 function ChartLine({chartInfo, defaultColor}) {
   return (
@@ -28,6 +27,15 @@ function ChartLine({chartInfo, defaultColor}) {
     </ResponsiveContainer>
   );
 
+}
+
+ChartLine.propTypes = {
+  chartInfo: PropTypes.array.isRequired,
+  defaultColor: PropTypes.shape({
+    color1: PropTypes.string,
+    color2: PropTypes.string,
+    color3: PropTypes.string,
+  }).isRequired,
 }
 
 export default ChartLine;

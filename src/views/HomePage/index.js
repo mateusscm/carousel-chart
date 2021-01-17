@@ -43,7 +43,6 @@ function HomePage() {
     }
   }
 
-  console.log(defaultColor);
   if (!Array.isArray(data) || data.length <= 0) {
     return null;
   }
