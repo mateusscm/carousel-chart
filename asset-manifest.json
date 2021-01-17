@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/carousel-chart/static/css/main.c1f7518d.chunk.css",
+    "main.js": "/carousel-chart/static/js/main.94148acf.chunk.js",
+    "main.js.map": "/carousel-chart/static/js/main.94148acf.chunk.js.map",
+    "runtime-main.js": "/carousel-chart/static/js/runtime-main.2adcfd62.js",
+    "runtime-main.js.map": "/carousel-chart/static/js/runtime-main.2adcfd62.js.map",
+    "static/js/2.92a1b08a.chunk.js": "/carousel-chart/static/js/2.92a1b08a.chunk.js",
+    "static/js/2.92a1b08a.chunk.js.map": "/carousel-chart/static/js/2.92a1b08a.chunk.js.map",
+    "index.html": "/carousel-chart/index.html",
+    "static/css/main.c1f7518d.chunk.css.map": "/carousel-chart/static/css/main.c1f7518d.chunk.css.map",
+    "static/js/2.92a1b08a.chunk.js.LICENSE.txt": "/carousel-chart/static/js/2.92a1b08a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2adcfd62.js",
+    "static/js/2.92a1b08a.chunk.js",
+    "static/css/main.c1f7518d.chunk.css",
+    "static/js/main.94148acf.chunk.js"
+  ]
+}
