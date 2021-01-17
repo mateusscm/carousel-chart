@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
-  ResponsiveContainer, PieChart, Pie, Sector
+  ResponsiveContainer, PieChart, Pie, Sector, Cell,
 } from 'recharts';
-
-// import { Container } from './styles';
 
 const renderActiveShape = ({cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
 	fill, payload, percent, value,}) => {
@@ -49,11 +47,10 @@ const renderActiveShape = ({cx, cy, midAngle, innerRadius, outerRadius, startAng
 	);
 };
 
-function ChartPie({chartInfo}) {
-  const [newInfo, setNewInfo] = useState({});
+function ChartPie({chartInfo , defaultColor}) {
+  const [newInfo, setNewInfo] = useState([]);
+  const [convertColor, setConvertColor] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // const COLORS = ['#8884d8', '#81d255', '#82ca9d'];
 
   const onPieEnter = (data, index) => {
     setActiveIndex(index);
@@ -61,6 +58,7 @@ function ChartPie({chartInfo}) {
 
   useEffect(() => {
     const aux = chartInfo.reduce(
+      // eslint-disable-next-line no-sequences
       (acc, cur) => (Object.keys(cur).forEach(item => (acc[item] = (acc[item] || 0) + cur[item])), acc), {}
     );
 
@@ -68,6 +66,12 @@ function ChartPie({chartInfo}) {
     
     setNewInfo(result);
   }, [chartInfo]);
+
+  useEffect(() => {
+	  const result = Object.keys(defaultColor).map((key) => defaultColor[key]);
+
+	  setConvertColor(result);
+  }, [defaultColor]);
 
   return (
     <ResponsiveContainer>
@@ -79,13 +83,14 @@ function ChartPie({chartInfo}) {
             innerRadius={60}
             outerRadius={80}
             fill="#8884d8"
-            dataKey="value"
+			dataKey="value"
+			labelLine
             onMouseEnter={onPieEnter}
-          />
-            {/* {
-              newInfo.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-            }
-          </Pie> */}
+          >
+            {
+				newInfo.map((entry, index) => <Cell key={`cell-${index}`} fill={convertColor[index % convertColor.length]} />)
+			}
+		  </Pie>
           {/* <Tooltip /> */}
         </PieChart>
     </ResponsiveContainer>
