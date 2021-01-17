@@ -3,24 +3,37 @@ import React from "react";
 import { LeftArrow, RightArrow } from "../../assets/icons";
 import Card from "../Card";
 import * as S from "./style";
-import chartData from '../../data.json';
+import chartData from "../../data/data";
 
-function Slider({ charts, current, setCurrent, prevSlide, nextSlide, defaultColor }) {
+function Slider({
+  charts,
+  current,
+  setCurrent,
+  prevSlide,
+  nextSlide,
+  defaultColor,
+}) {
   return (
     <S.SliderSection>
-        <button className="left" onClick={prevSlide}>
-          <LeftArrow />
-        </button>
-        <button className="right" onClick={nextSlide}>
-          <RightArrow />
-        </button>
+      <button className="left" onClick={prevSlide}>
+        <LeftArrow />
+      </button>
+      <button className="right" onClick={nextSlide}>
+        <RightArrow />
+      </button>
       {charts.map((info, index) => {
         return (
           <div
             key={info?.id}
             className={index === current ? "slide active" : "slide"}
           >
-            {index === current && <Card data={info} chartData={chartData} defaultColor={defaultColor} />}
+            {index === current && (
+              <Card
+                data={info}
+                chartData={chartData}
+                defaultColor={defaultColor}
+              />
+            )}
           </div>
         );
       })}
@@ -46,6 +59,6 @@ Slider.propTypes = {
   nextSlide: PropTypes.func.isRequired,
   prevSlide: PropTypes.func.isRequired,
   setCurrent: PropTypes.func.isRequired,
-}
+};
 
 export default Slider;
