@@ -4,7 +4,7 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 100px;
 `;
 
 export const ContainerSelectColor = styled.div`
@@ -18,6 +18,12 @@ export const ContainerSelectColor = styled.div`
     padding-right: 0px;
   }
 
+    .btn.selected > span {
+      transform: scale(1.10);
+      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+      opacity: 1;
+    }
   & > div {
     display: flex;
     position: relative;
@@ -29,9 +35,10 @@ export const ContainerSelectColor = styled.div`
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
-      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
-        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+      opacity: 0.7;
     }
+
 
     .azul {
       background-color: #003c96;

@@ -19,7 +19,7 @@ function ChartLine({chartInfo, defaultColor}) {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" height={36}/>
-          <Brush dataKey='name' height={10} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
+          <Brush dataKey='name' height={20} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
           <Line type="monotone" dataKey="company_A" stroke={defaultColor?.color1} />
           <Line type="monotone" dataKey="company_B" stroke={defaultColor?.color2} />
           <Line type="monotone" dataKey="company_C" stroke={defaultColor?.color3} />

@@ -6,6 +6,7 @@ import data from "../../data/fake-data";
 function HomePage() {
   const [current, setCurrent] = useState(0);
   const length = data.length;
+  const [selectedColor, setSelectedColor] = useState("blue");
 
   const [defaultColor, setDefaultColor] = useState({
     color1: "#003C96",
@@ -28,18 +29,21 @@ function HomePage() {
         color2: "#6D7A2A",
         color3: "#CC620A",
       });
+      setSelectedColor("green");
     } else if (color === "yellow") {
       setDefaultColor({
         color1: "#E2BD03",
         color2: "#B26768",
         color3: "#8312CC",
       });
+      setSelectedColor("yellow");
     } else {
       setDefaultColor({
         color1: "#003C96",
         color2: "#59254E",
         color3: "#B40E07",
       });
+      setSelectedColor("blue");
     }
   };
 
@@ -52,7 +56,7 @@ function HomePage() {
       <S.ContainerSelectColor>
         <div
           role="button"
-          className="btn-azul"
+          className={selectedColor === 'blue' ? "btn selected" : "btn-azul"}
           onClick={() => handleChangeColor("blue")}
         >
           <span className="azul" />
@@ -61,7 +65,7 @@ function HomePage() {
         </div>
         <div
           role="button"
-          className="btn-verde"
+          className={selectedColor === 'green' ? "btn selected" : "btn-verde"}
           onClick={() => handleChangeColor("green")}
         >
           <span className="verde" />
@@ -70,7 +74,7 @@ function HomePage() {
         </div>
         <div
           role="button"
-          className="btn-amarelo"
+          className={selectedColor === 'yellow' ? "btn selected" : "btn-amarelo"}
           onClick={() => handleChangeColor("yellow")}
         >
           <span className="amarelo" />

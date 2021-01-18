@@ -18,7 +18,7 @@ function ChartBar({chartInfo, defaultColor}) {
           <YAxis />
           <Tooltip />
           <Legend verticalAlign="top" height={36}/>
-          <Brush dataKey='name' height={10} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
+          <Brush dataKey='name' height={20} stroke={defaultColor?.color2} startIndex={0} endIndex={50}/>
           <Bar dataKey="company_A" stackId="a" fill={defaultColor?.color1} />
           <Bar dataKey="company_B" stackId="a" fill={defaultColor?.color2} />
           <Bar dataKey="company_C" stackId="a" fill={defaultColor?.color3} />
